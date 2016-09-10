@@ -1,0 +1,115 @@
+﻿@{
+   
+}
+
+@model IEnumerable<EACUniformsDS3.Models.OrdItem>
+
+@*<div>
+        <h4>OrdItem</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.ItemID)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.ItemID)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.OrderID)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.OrderID)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Quantity)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Quantity)
+            </dd>
+
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.OrdItemID }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>*@
+
+
+<body style="background: url(/Images/lightblue.jpg)">
+    <div style="color: darkred">
+        <h1 style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">   Order Number : @Session["orderid"]      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    Supplier :  @Session["sup"]   &nbsp;&nbsp;&nbsp;&nbsp; Date : @System.DateTime.Today.ToShortDateString()</h1>
+
+
+        <h1 style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"></h1>
+
+
+
+    </div>
+
+    <div id="refresh">
+
+        <table class="table" style="color:black">
+            <tr>
+                <th>
+                    Item No:
+                </th>
+                <th>
+                    Item Decription
+                </th>
+                <th>
+                    unit price
+                </th>
+                <th>
+                    Quantity
+                </th>
+                <th>
+                    Total Item Price
+                </th>
+
+                <th></th>
+            </tr>
+
+            @if (Model != null)
+            {
+
+                foreach (var item in Model)
+                {
+
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.item_Id)
+
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.description)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.UnitPrice)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Quantity)
+                        </td>
+                        <td>
+
+                            @Html.DisplayFor(modelItem => item.total)
+                        </td>
+                    </tr>
+                }
+            }
+
+        </table>
+
+        @using (Ajax.BeginForm("_Submit", "Order", new AjaxOptions() { UpdateTargetId = "refresh" }))
+        {
+            @Html.AntiForgeryToken()
+            @Html.Action("_AddForm", "Order", new { orderID = Session["orderid"] });
+        }
+
+    </div>
+</body>
+

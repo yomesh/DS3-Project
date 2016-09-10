@@ -1,0 +1,19 @@
+﻿@model EACUniformsDS3.Models.Order
+
+
+@{
+    ViewBag.Title = "Multi";
+}
+<h3> Please select supplier</h3>
+
+
+@using (Html.BeginForm("Multi", "Order", new { supplier = Session["Supplier"], FormMethod.Post }))
+{
+
+    @Html.DropDownList("supplier", new SelectList(EACUniformsDS3.Controllers.SupplierController.GetDropDownSuppliers(), "Value", "Text", @Session["sup"]), new { onchange = "form.submit();" })
+    @*@Html.DropDownList("ID = supplier",)
+        Session["sup"] =*@
+
+}
+@Html.Action("_GetOrderItems", "Order", new { orderid = Session["orderid"] })
+

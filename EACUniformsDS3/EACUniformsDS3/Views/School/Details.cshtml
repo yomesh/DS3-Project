@@ -1,0 +1,90 @@
+﻿@model EACUniformsDS3.Models.School
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>School</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.school_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.school_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.address_Line1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.address_Line1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.address_Line2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.address_Line2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.suburb)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.suburb)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.city)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.city)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.postal_Code)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.postal_Code)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.contact_Person)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.contact_Person)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Contact_eMail_Address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Contact_eMail_Address)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.contact_Number)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.contact_Number)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.school_Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,93 @@
+﻿@model IEnumerable<EACUniformsDS3.Models.Supplier>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.supplier_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.email_Address)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.contact_Number)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ContactName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ContactSurname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.address_Line1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.address_Line2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.suburb)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.city)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.postal_Code)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Lead_Time)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.supplier_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.email_Address)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.contact_Number)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ContactName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ContactSurname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.address_Line1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.address_Line2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.suburb)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.city)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.postal_Code)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Lead_Time)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.supplier_Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.supplier_Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.supplier_Id })
+        </td>
+    </tr>
+}
+
+</table>
