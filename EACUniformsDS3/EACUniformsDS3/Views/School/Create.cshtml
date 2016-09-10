@@ -18,7 +18,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.school_Name, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.school_Name)
+                @Html.TextBoxFor(model => model.school_Name, new { @class = "form-control", placeholder = "Enter School Name..." })
                 @Html.ValidationMessageFor(model => model.school_Name)
             </div>
         </div>
@@ -26,7 +26,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.address_Line1, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.address_Line1)
+                @Html.TextBoxFor(model => model.address_Line1, new { @class = "form-control", placeholder = "Enter Address..." })
                 @Html.ValidationMessageFor(model => model.address_Line1)
             </div>
         </div>
@@ -34,7 +34,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.address_Line2, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.address_Line2)
+                @Html.TextBoxFor(model => model.address_Line2, new { @class = "form-control", placeholder = "Enter Address..." })
                 @Html.ValidationMessageFor(model => model.address_Line2)
             </div>
         </div>
@@ -42,7 +42,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.suburb, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.suburb)
+                @Html.TextBoxFor(model => model.suburb, new { @class = "form-control", placeholder = "Enter Suburb..." })
                 @Html.ValidationMessageFor(model => model.suburb)
             </div>
         </div>
@@ -50,7 +50,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.city, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.city)
+                @Html.TextBoxFor(model => model.city, new { @class = "form-control", placeholder = "Enter City..." })
                 @Html.ValidationMessageFor(model => model.city)
             </div>
         </div>
@@ -58,7 +58,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.postal_Code, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.postal_Code)
+                @Html.TextBoxFor(model => model.postal_Code, new { @class = "form-control", placeholder = "Enter Postal Code..." })
                 @Html.ValidationMessageFor(model => model.postal_Code)
             </div>
         </div>
@@ -66,7 +66,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.contact_Person, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.contact_Person)
+                @Html.TextBoxFor(model => model.contact_Person, new { @class = "form-control", placeholder = "Enter Contact Person..." })
                 @Html.ValidationMessageFor(model => model.contact_Person)
             </div>
         </div>
@@ -74,7 +74,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Contact_eMail_Address, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Contact_eMail_Address)
+                @Html.TextBoxFor(model => model.Contact_eMail_Address, new { @class = "form-control", placeholder = "Enter Email Address..." })
                 @Html.ValidationMessageFor(model => model.Contact_eMail_Address)
             </div>
         </div>

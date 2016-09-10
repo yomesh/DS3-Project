@@ -18,7 +18,10 @@
         <div class="form-group">
             @Html.LabelFor(model => model.description, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.description)
+                
+                @Html.TextBoxFor(model => model.description, new { @class = "form-control", placeholder = "Enter Item Description..." })
+
+
                 @Html.ValidationMessageFor(model => model.description)
             </div>
         </div>
@@ -26,7 +29,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Cprice, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Cprice)
+                @Html.TextBoxFor(model => model.Cprice, new { @class = "form-control", placeholder = "Enter Cost Price..." })
                 @Html.ValidationMessageFor(model => model.Cprice)
             </div>
         </div>
@@ -34,7 +37,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Sprice, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Sprice)
+                @Html.TextBoxFor(model => model.Sprice, new { @class = "form-control", placeholder = "Enter Selling Price..." })
                 @Html.ValidationMessageFor(model => model.Sprice)
             </div>
         </div>
@@ -49,7 +52,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.imageUrl, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.imageUrl)
+                @Html.TextBoxFor(model => model.imageUrl, new { @class = "form-control", placeholder = "Enter URL..." })
                 @Html.ValidationMessageFor(model => model.imageUrl)
             </div>
         </div>
