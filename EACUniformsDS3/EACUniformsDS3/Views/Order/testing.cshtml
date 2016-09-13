@@ -1,0 +1,49 @@
+﻿@model EACUniformsDS3.Models.Order
+@{
+    ViewBag.Title = "testing";
+}
+
+<h2>testing</h2>
+@*<script>
+$(document).ready(function () {
+
+        $("#myDropDown").change(function (event) {
+            alert("You have Selected  :: "+$(this).val());
+        });
+    });
+</script>*@
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
+</script>
+<script>
+$(document).ready(function(){
+    $('#myDropDown').change(function() {
+        alert($("#myDropDown option:selected").text());
+        var hhn = ($("#myDropDown option:selected").text());
+        //$.session("sup", hhn);
+  });
+});
+</script>
+
+<select id="myDropDown">
+    <option>Milk</option>
+    <option>Egg</option>
+    <option>Bread</option>
+    <option>Fruits</option>
+</select>
+
+@*@ViewBag.hhn;
+@if (Session["sup"] != null)
+{
+
+Session["sup"].ToString();
+}*@
+
+
+
+<input type="submit" value="Continue"  class="btn btn-default" />
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    
+}

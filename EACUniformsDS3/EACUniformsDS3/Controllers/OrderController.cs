@@ -67,9 +67,10 @@ namespace EACUniformsDS3.Controllers
             return View(order);
         }
 
-        public PartialViewResult _GetOrderItems (int orderid)
+        public PartialViewResult _GetOrderItems (Order ord)
         {
-            List<OrdItem> orditems = db.OrdItem.Where(m => m.OrderId == orderid).ToList();
+            List<OrdItem> orditems = db.OrdItem.Where(m => m.OrderId == ord.OrderId).ToList();
+            Session["sup"] = ord.Supplier;
 
             return PartialView("_GetOrderItems", orditems);
         }
@@ -165,6 +166,11 @@ namespace EACUniformsDS3.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
+        }
+
+        public ActionResult testing ()
+        {
+            return View();
         }
 
 

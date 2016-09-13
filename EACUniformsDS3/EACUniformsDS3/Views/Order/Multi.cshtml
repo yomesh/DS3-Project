@@ -7,13 +7,18 @@
 <h3> Please select supplier</h3>
 
 
-@using (Html.BeginForm("Multi", "Order", new { supplier = Session["Supplier"], FormMethod.Post }))
+@using (Html.BeginForm("Multi", "Order", new { supplier = Session["Sup"], FormMethod.Post }))
 {
 
-    @Html.DropDownList("supplier", new SelectList(EACUniformsDS3.Controllers.SupplierController.GetDropDownSuppliers(), "Value", "Text", @Session["sup"]), new { onchange = "form.submit();" })
-    @*@Html.DropDownList("ID = supplier",)
-        Session["sup"] =*@
+    @Html.DropDownList("Supplier", new SelectList(EACUniformsDS3.Controllers.SupplierController.GetDropDownSuppliers(), "Value", "Text", @Session["sup"]), new { onchange = "form.submit();" })
+    
 
+     
+    if (Session["orderid"] != null)
+    {
+        Model.OrderId = Convert.ToInt32(Session["orderid"]);
+
+    }
 }
-@Html.Action("_GetOrderItems", "Order", new { orderid = Session["orderid"] })
+@Html.Action("_GetOrderItems", "Order")
 
